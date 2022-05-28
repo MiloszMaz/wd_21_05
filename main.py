@@ -166,6 +166,15 @@ def zadanie9():
 
     plt.show()
 
+def zadanie10():
+    df = pd.read_csv('zamowienia.csv', delimiter=';')
+    policzone = df.groupby('Sprzedawca').size()
+    policzone.plot.bar()
+    plt.ylabel("liczba zamówień")
+    plt.subplots_adjust(left=0.1, right=0.9, bottom=0.2, top=0.9)
+    plt.title('Ilość zamówień sprzedawców')
+    plt.show()
+
 
 if __name__ == '__main__':
     #zadanie1()
@@ -186,4 +195,7 @@ if __name__ == '__main__':
     # slupkowy
     #zadanie8()
 
-    zadanie9()
+    # slupkowy pandas
+    #zadanie9()
+
+    zadanie10()
